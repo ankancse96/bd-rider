@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import {useParams} from 'react-router-dom'
 import fakeData from '../../fakeData/ride'
-import Ride from '../Ride/Ride';
 import Map from '../Map/Map';
 import './DestinationDetails.css'
 

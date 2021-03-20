@@ -30,7 +30,7 @@ const Login = () => {
   let { from } = location.state || { from: { pathname: "/" } };
 
   const provider = new firebase.auth.GoogleAuthProvider();
-  const gitProvider = new firebase.auth.GithubAuthProvider();
+  
  
   const handaleSignIn = () =>{
     firebase.auth().signInWithPopup(provider)
