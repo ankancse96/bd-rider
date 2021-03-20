@@ -7,7 +7,7 @@ const Ride = (props) => {
     const{imgUrl,title,price,id} = props.ride;
     const history = useHistory()
     const handleBook = (id) => {
-        history.push(`/destination/${id}`);
+        history.push(`/destinationDetails/${id}`);
     }
     
     return (

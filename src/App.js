@@ -7,12 +7,13 @@ import {
 } from "react-router-dom";
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
-import Destination from './components/Destination/Destination';
+import Destination from './components/DestinationDetails/DestinationDetails';
 import Blog from './components/Blog/Blog';
 import Contuct from './components/Contuct/Contuct';
 import Login from './components/Login/Login';
 import { createContext,useState } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import DestinationDetails from './components/DestinationDetails/DestinationDetails';
 
 export const UserContext = createContext();
 
@@ -27,9 +28,11 @@ function App() {
             <Route path="/home">
               <Home />
             </Route>
-            
-            <PrivateRoute path="/destination/:id">
-              <Destination />
+            <PrivateRoute path="/destination">
+              <Destination/>
+            </PrivateRoute>
+            <PrivateRoute path="/destinationDetails/:id">
+              <DestinationDetails />
             </PrivateRoute>
             <Route path="/blog">
               <Blog />

@@ -72,50 +72,6 @@ const Login = () => {
 })
 }
 
-const handaleGitSignIn = () => {
-  firebase.auth().signInWithPopup(gitProvider)
-  .then((result) => {
-    /** @type {firebase.auth.OAuthCredential} */
-   
-
-    // The signed-in user info.
-    const {displayName,photoURL,email} = result.user
-      const gitSignInUser = {
-        isGitSignedIn:true,
-        
-        photo:photoURL,
-        email:email
-      }
-      setUser(gitSignInUser)
-      console.log(displayName,photoURL,email)
-  }).catch((error) => {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(errorCode, errorMessage)
-
-  });
-}
-
-const handaleGitSignOut = () =>{
-  firebase.auth().signOut()
-  .then(res => {
-    
-    
-    const gitSignedOutUser = {
-      isGitSignedIn:false,
-      
-      photo:"",
-      email:""
-}
-    setUser(gitSignedOutUser);
-}) 
-.catch(err => {
-console.log(err)
-console.log(err.message)
-})
-}
-
 const handaleBlur = (e) => {
   let isFieldValid = true ;
   
@@ -212,11 +168,6 @@ const updateUserName= name => {
       {
           user.isSignedIn ? <button onClick={handaleSignOut}>Sign Out</button>:
           <Button onClick={handaleSignIn}>Sign In With Google</Button>
-        } <br />
-
-        {
-          user.isGitSignedIn ? <button onClick={handaleGitSignOut}>Sign Out</button>:
-          <Button onClick={handaleGitSignIn}>Sign In With Github</Button>
         } <br />
     </div>
     <p style={{color: 'red'}}>{user.error}</p>

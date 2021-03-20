@@ -24,7 +24,7 @@ const rides = [
         id: 4,
         title: 'Train',
         imgUrl: 'https://www.mid-9.com/1m-tomytec/image/218210.jpg',
-        capacity: 4,
+        capacity: 400,
         price: 249
     }
 ]
