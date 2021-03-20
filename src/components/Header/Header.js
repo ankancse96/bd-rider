@@ -5,7 +5,8 @@ import './Header.css';
 import { UserContext } from '../../App';
 
 const Header = () => {
-    const [loggedInUser] = useContext(UserContext)
+    const [loggedInUser,setLoggedInUser] = useContext(UserContext)
+    console.log(setLoggedInUser);
     return (
         <div style={{ backgroundColor:"black"}} >
             <nav className="nav">
@@ -37,6 +38,7 @@ const Header = () => {
                 <h6>A global icon of Bangladesh luxury</h6>
                 
             </div>
+            
         </div>
     );
 };

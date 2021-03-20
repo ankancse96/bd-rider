@@ -23,7 +23,8 @@ const Login = () => {
     success: false,
   });
 
-  const [setLoggedInUser] = useContext(UserContext);
+  const [loggInUser,setLoggedInUser] = useContext(UserContext);
+  console.log(loggInUser);
   const history = useHistory();
   const location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
