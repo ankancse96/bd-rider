@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-
+import {LinkContainer} from 'react-router-bootstrap'
 import './Header.css';
 import { Nav,Navbar } from 'react-bootstrap';
 import { UserContext } from '../../App';
@@ -12,11 +12,23 @@ const Header = () => {
             <Navbar bg="dark" variant="dark">
         <Navbar.Brand href="/home">Rider Zone</Navbar.Brand>
         <Nav className="ml-auto">
-      <Nav.Link href="/home">Home</Nav.Link>
-      <Nav.Link href="/destination">Destination</Nav.Link>
-      <Nav.Link href="/blog">Blog</Nav.Link>
-      <Nav.Link href="/Contact">Contact</Nav.Link>
-      <Nav.Link href="/login">Login {loggedInUser.email}</Nav.Link>
+        <LinkContainer to="/home">
+      <Nav.Link>Home</Nav.Link>
+      </LinkContainer>
+      <LinkContainer to="/destination">
+      <Nav.Link>Destination</Nav.Link>
+      </LinkContainer>
+      
+      <LinkContainer to="/Blog">
+      <Nav.Link>Blog</Nav.Link>
+      </LinkContainer>
+      <LinkContainer to="/contact">
+      <Nav.Link>Contact</Nav.Link>
+      </LinkContainer>
+      <LinkContainer to="/login">
+      <Nav.Link>Login {loggedInUser.email}</Nav.Link>
+      </LinkContainer>
+      
       
     </Nav>
   </Navbar>
