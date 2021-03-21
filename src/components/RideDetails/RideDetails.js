@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
 import {useParams} from 'react-router-dom'
 import fakeData from '../../fakeData/ride'
 import Map from '../Map/Map';
-import './DestinationDetails.css'
+import './RideDetails.css'
 
-const DestinationDetails = () => {
+const RideDetails = () => {
     const [show,setShow] = useState(false)
-    let {id} = useParams();
-    const rider = fakeData.filter(rides=>rides.id === parseInt(id));
-    const{title,capacity,price,imgUrl} = rider[0];
+    let {title} = useParams();
+    const rider = fakeData.filter(rides=>rides.title === title);
+    const{capacity,price,imgUrl} = rider[0];
         console.log('this is',title,price,imgUrl);
     
     return (
@@ -44,26 +44,45 @@ const DestinationDetails = () => {
                     {
                         
                         show?
+<Card>
+                        <Card.Body>
                         <div style={{display:"flex"}}>
                         <img src={imgUrl} alt=""/>
-                        {title} {capacity} {price}$
+                        <div style={{padding:"15px"}}>{title}</div>
+                        <div style={{padding:"15px"}}>{capacity}</div>
+                        <div style={{padding:"15px"}}>{price}$</div>
                         </div>
+                        </Card.Body>
+                      </Card>
+                        :null
+                    }
+                    {
+                        show? 
+                        <Card>
+                        <Card.Body>
+                        <div style={{display:"flex"}}>
+                        <img src={imgUrl} alt=""/>
+                        <div style={{padding:"15px"}}>{title}</div>
+                        <div style={{padding:"15px"}}>{capacity}</div>
+                        <div style={{padding:"15px"}}>{price}$</div>
+                        </div>
+                        </Card.Body>
+                      </Card>
+                        
                         :null
                     }
                     {
                         show?
+                        <Card>
+                        <Card.Body>
                         <div style={{display:"flex"}}>
                         <img src={imgUrl} alt=""/>
-                        {title} {capacity} {price}$
+                        <div style={{padding:"15px"}}>{title}</div>
+                        <div style={{padding:"15px"}}>{capacity}</div>
+                        <div style={{padding:"15px"}}>{price}$</div>
                         </div>
-                        :null
-                    }
-                    {
-                        show?
-                        <div style={{display:"flex"}}>
-                        <img src={imgUrl} alt=""/>
-                        {title} {capacity} {price}$
-                        </div>
+                        </Card.Body>
+                      </Card>
                         :null
                     }
                 
@@ -81,4 +100,4 @@ const DestinationDetails = () => {
     );
 };
 
-export default DestinationDetails;
+export default RideDetails;

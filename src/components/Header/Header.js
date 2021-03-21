@@ -9,8 +9,11 @@ const Header = () => {
     console.log(setLoggedInUser);
     return (
         <div style={{ backgroundColor:"black"}} >
-            <Navbar bg="dark" variant="dark">
+            <Navbar expand='lg' bg="dark" variant="dark">
+        
         <Navbar.Brand href="/home">Rider Zone</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
         <LinkContainer to="/home">
       <Nav.Link>Home</Nav.Link>
@@ -31,6 +34,7 @@ const Header = () => {
       
       
     </Nav>
+    </Navbar.Collapse>
   </Navbar>
             <div className="title-container">
                 

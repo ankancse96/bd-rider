@@ -4,10 +4,10 @@ import { useHistory } from 'react-router-dom';
 
 const Ride = (props) => {
     
-    const{imgUrl,title,price,id} = props.ride;
+    const{imgUrl,title,price} = props.ride;
     const history = useHistory()
-    const handleBook = (id) => {
-        history.push(`/destinationDetails/${id}`);
+    const handleBook = (title) => {
+        history.push(`/rideDetails/${title}`);
     }
     
     return (
@@ -20,7 +20,7 @@ const Ride = (props) => {
     <Card.Title><h6>{title}</h6></Card.Title>
     <Card.Text>  <p>Price: {price}</p></Card.Text>
     
-    <Button onClick={() => handleBook(id)} style={{paddingTop:"10px"}}  variant="warning"> Select Ride  </Button>
+    <Button onClick={() => handleBook(title)} style={{paddingTop:"10px"}}  variant="warning"> Select Ride  </Button>
     
   </Card.Body>
 

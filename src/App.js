@@ -7,13 +7,14 @@ import {
 } from "react-router-dom";
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
-import Destination from './components/DestinationDetails/DestinationDetails';
+
 import Blog from './components/Blog/Blog';
 import Contuct from './components/Contuct/Contuct';
 import Login from './components/Login/Login';
 import { createContext,useState } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import DestinationDetails from './components/DestinationDetails/DestinationDetails';
+import RideDetails from './components/RideDetails/RideDetails';
+import Desti from './components/Desti/Desti';
 
 export const UserContext = createContext();
 
@@ -29,10 +30,10 @@ function App() {
               <Home />
             </Route>
             <PrivateRoute path="/destination">
-              <Destination/>
+              <Desti></Desti>
             </PrivateRoute>
-            <PrivateRoute path="/destinationDetails/:id">
-              <DestinationDetails />
+            <PrivateRoute path="/rideDetails/:title">
+              <RideDetails />
             </PrivateRoute>
             <Route path="/blog">
               <Blog />

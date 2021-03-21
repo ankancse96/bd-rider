@@ -150,8 +150,7 @@ const updateUserName= name => {
         <div className="body">
     <div className="login-box">
         <h1>Login</h1>
-        <input type="checkbox" onChange={()=> setNewUser(!newUser)} name="newUser" id=""/>
-        <label htmlFor="newUser">New User Sign Up</label>
+        
         <form onSubmit={handaleSubmit}>
         <div className="textbox">
         {newUser &&<input type="text" onBlur={handaleBlur} name="name" placeholder="Your Name" required/>}
@@ -165,6 +164,9 @@ const updateUserName= name => {
       </div>
       <input className="btn" type="submit" value= {newUser?'Sign Up' : 'Sign In'}/>
       </form>
+      
+        <label htmlFor="newUser">Don't Have Account ? <input type="checkbox" onChange={()=> setNewUser(!newUser)} name="newUser" id=""/> Create Account</label>
+        <h4 style={{textAlign:'center'}}>OR</h4>
       {
           user.isSignedIn ? <button onClick={handaleSignOut}>Sign Out</button>:
           <Button onClick={handaleSignIn}>Sign In With Google</Button>
